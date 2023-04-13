@@ -1,13 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/native-stack';
+
+import Home from './src/pages/Home';
+import Home from './src/pages/Formacao';
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Olá Mundo!</Text>
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home"component={Home}/>
 
-      <Text>Meu nome é Renata e este é meu primeiro APP em React!</Text>
-      </View>
-  );
+          <Stack.Screen name="Formacao"component={Formacao}/>
+        </Stack.Navigator>
+     /</NavigationContainer> 
+
+    );
 }
 
 const styles = StyleSheet.create({
